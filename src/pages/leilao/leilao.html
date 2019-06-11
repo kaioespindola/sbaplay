@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar transparent style="animation: 800ms ease-out 0s 1 slideInFromBottom;">
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-bg" fullscreen>
+
+    <h1 style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">{{item.name}}</h1>
+
+    <div *ngIf="item.picture; else gavel" style="animation: 1800ms ease-in-out 0s 1 slideInFromBottom;">
+        <img src="http://www.sba1.com/arquivos/leiloes/{{item.picture.split('leiloes/')[1]}}">
+    </div>
+    
+    <ng-template #gavel>
+        <img style="animation: 1800ms ease-in-out 0s 1 slideInFromBottom;" src="././assets/imgs/leilaovazio.jpg">
+    </ng-template>
+
+    <h2 style="animation: 1100ms ease-out 0s 1 slideInFromBottom;">Canal</h2>
+    <h3 style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">{{item.canai.name}}</h3>
+
+    <h2 style="animation: 1300ms ease-out 0s 1 slideInFromBottom;">Data</h2>
+    <h3 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">{{item.date | date:'dd/MM'}} | {{item.date | date: 'H:mm':'-0300'}}</h3>
+
+    <h2 style="animation: 1500ms ease-out 0s 1 slideInFromBottom;">Local</h2>
+    <h3 style="animation: 1600ms ease-out 0s 1 slideInFromBottom;">{{item.local}}</h3>
+
+    <h2 style="animation: 1700ms ease-out 0s 1 slideInFromBottom;">Realização</h2>
+    <h3 style="animation: 1800ms ease-out 0s 1 slideInFromBottom;"><div *ngFor="let item of item.leiloeiras">{{item.name}} </div></h3>
+
+    <div class="clearfix"></div>
+
+    <div *ngIf="item.grandescriatorios">
+
+      <h1 style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">Grandes Criatórios</h1>
+
+      <iframe class="grandescriatorios" width="100%" height="300" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+
+    </div>
+
+    <div *ngIf="item.catalogo">
+
+      <h1 style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">Catálogo</h1>
+
+      <h3><ion-icon ios="ios-download" md="md-download"></ion-icon> Baixar Catalogo</h3>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+</ion-content>

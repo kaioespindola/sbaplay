@@ -1,0 +1,248 @@
+<ion-header>
+    <ion-navbar transparent>
+    </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="assistir" has-bouncing="true">
+
+    <div *ngIf="channel.player == 'livecb'">
+
+      <div class="video-container">
+          <iframe style="border:0;" src="http://monitor.sba1.com/canaldoboi.php" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+      </div>
+
+    </div>
+
+    <div *ngIf="channel.player == 'liveac'">
+
+        <div class="video-container">
+            <iframe style="border:0;" src="http://monitor.sba1.com/agrocanal.php" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+        </div>
+  
+    </div>
+
+    <div *ngIf="channel.player == 'livecm'">
+
+        <div class="video-container">
+            <iframe style="border:0;" src="http://monitor.sba1.com/cinemais.php" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+        </div>
+  
+    </div>
+
+    <h1 style="animation: 800ms ease-in-out 0s 1 slideInFromBottom;">{{channel.name}}</h1>
+    <h5 style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">AO VIVO</h5>
+
+
+    <!-- Canal do Boi -->
+
+    <div *ngIf="channel.player == 'livecb'">
+
+        <div *ngIf='agoracb.length < 1' style="width:100%;margin:0px;padding:0px;">
+            <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+              <div class="caixa-aovivo"></div>
+            </div>
+        </div>
+  
+        <div *ngIf='agoracb.length === 1' style="width:100%;margin:0px;padding:0px;">
+  
+          <div *ngFor="let itemcb of agoracb">
+    
+            <div class="agora" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+      
+              <ion-grid style="margin:0px;padding:0px;">
+      
+                <ion-row style="margin:0px;padding:0px;">
+      
+                  <ion-col class="programa" col-8 col-sm>
+                    <div class="aovivo">agora</div>
+                    <div class="nome">{{itemcb.name}}</div>
+                  </ion-col>
+      
+                  <ion-col col-4 col-sm style="padding:0px;margin:0px;">
+                    <div class="horario">{{itemcb.time | date: 'H:mm'}}</div>
+                  </ion-col>
+      
+                </ion-row>
+  
+              </ion-grid>
+      
+            </div>
+    
+          </div>
+  
+        </div>
+  
+      <div *ngIf='depoiscb.length < 1' style="width:100%;margin:0px;padding:0px;">
+          <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+            <div class="caixa-aovivo"></div>
+          </div>
+      </div>
+  
+      <div *ngFor="let itemcb of depoiscb">
+  
+        <div class="depois" style="animation: 1200ms ease-in-out 0s 1 slideInFromBottom;">
+  
+          <ion-grid style="margin:0px;padding:0px;">
+  
+            <ion-row style="margin:0px;padding:0px;">
+  
+              <ion-col class="programa" col-8 col-sm>
+                <div class="aovivo">depois</div>
+                <div class="nome">{{itemcb.name}}</div>
+              </ion-col>
+  
+              <ion-col col-4 col-sm style="padding:0px;margin:0px;">
+                <div class="horario">{{itemcb.time | date: 'H:mm'}}</div>
+              </ion-col>
+  
+            </ion-row>
+            
+          </ion-grid>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+
+    <!-- Agro Canal -->
+
+    <div *ngIf="channel.player == 'liveac'">
+
+      <div *ngIf='agoraac.length < 1' style="width:100%;margin:0px;padding:0px;">
+          <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+            <div class="caixa-aovivo"></div>
+          </div>
+      </div>
+
+      <div *ngFor="let itemac of agoraac">
+
+        <div class="agora" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+
+          <ion-grid style="margin:0px;padding:0px;">
+
+            <ion-row style="margin:0px;padding:0px;">
+
+              <ion-col class="programa" col-8 col-sm>
+                <div class="aovivo">agora</div>
+                <div class="nome">{{itemac.name}}</div>
+              </ion-col>
+
+              <ion-col col-4 col-sm style="padding:0px;margin:0px;">
+                <div class="horario">{{itemac.time | date: 'H:mm'}}</div>
+              </ion-col>
+
+            </ion-row>
+
+          </ion-grid>
+
+        </div>
+
+      </div>
+
+      <div *ngIf='depoisac.length < 1' style="width:100%;margin:0px;padding:0px;">
+          <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+            <div class="caixa-aovivo"></div>
+          </div>
+      </div>
+
+      <div *ngFor="let itemac of depoisac">
+
+        <div class="depois" style="animation: 1200ms ease-in-out 0s 1 slideInFromBottom;">
+
+          <ion-grid style="margin:0px;padding:0px;">
+
+            <ion-row style="margin:0px;padding:0px;">
+
+              <ion-col class="programa" col-8 col-sm>
+                <div class="aovivo">depois</div>
+                <div class="nome">{{itemac.name}}</div>
+              </ion-col>
+
+              <ion-col col-4 col-sm style="padding:0px;margin:0px;">
+                <div class="horario">{{itemac.time | date: 'H:mm'}}</div>
+              </ion-col>
+
+            </ion-row >
+
+          </ion-grid>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Cine Mais -->
+
+    <div *ngIf="channel.player == 'livecm'">
+
+        <div *ngIf='agoracm.length < 1' style="width:100%;margin:0px;padding:0px;">
+            <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+              <div class="caixa-aovivo"></div>
+            </div>
+        </div>
+  
+        <div *ngIf='agoracm.length === 1' style="width:100%;margin:0px;padding:0px;">
+  
+          <div *ngFor="let itemcm of agoracm">
+    
+            <div class="agora" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+      
+              <ion-grid style="margin:0px;padding:0px;">
+      
+                <ion-row style="margin:0px;padding:0px;">
+      
+                  <ion-col class="programa" col-8 col-sm>
+                    <div class="aovivo">agora</div>
+                    <div class="nome">{{itemcm.name}}</div>
+                  </ion-col>
+      
+                  <ion-col col-4 col-sm style="padding:0px;margin:0px;">
+                    <div class="horario">{{itemcm.time | date: 'H:mm'}}</div>
+                  </ion-col>
+      
+                </ion-row>
+  
+              </ion-grid>
+      
+            </div>
+    
+          </div>
+  
+        </div>
+  
+      <div *ngIf='depoiscm.length < 1' style="width:100%;margin:0px;padding:0px;">
+          <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+            <div class="caixa-aovivo"></div>
+          </div>
+      </div>
+  
+      <div *ngFor="let itemcm of depoiscm">
+  
+        <div class="depois" style="animation: 1200ms ease-in-out 0s 1 slideInFromBottom;">
+  
+          <ion-grid style="margin:0px;padding:0px;">
+  
+            <ion-row style="margin:0px;padding:0px;">
+  
+              <ion-col class="programa" col-8 col-sm>
+                <div class="aovivo">depois</div>
+                <div class="nome">{{itemcm.name}}</div>
+              </ion-col>
+  
+              <ion-col col-4 col-sm style="padding:0px;margin:0px;">
+                <div class="horario">{{itemcm.time | date: 'H:mm'}}</div>
+              </ion-col>
+  
+            </ion-row>
+            
+          </ion-grid>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+
+</ion-content>

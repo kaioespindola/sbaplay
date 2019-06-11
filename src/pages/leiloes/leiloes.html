@@ -1,0 +1,147 @@
+<ion-content fullscreen class="content-bg">
+
+	<h1 style="animation: 600ms ease-in-out 0s 1 slideInFromBottom;">Agenda de Leilões</h1>
+
+  <ion-toolbar no-border-top transparent style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+    <ion-segment [(ngModel)]="todos">
+      <ion-segment-button value="todos">
+        Todos
+      </ion-segment-button>
+      <ion-segment-button value="canaldoboi">
+        Canal do Boi
+      </ion-segment-button>
+      <ion-segment-button value="agrocanal">
+        Agro Canal
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+	<div [ngSwitch]="todos">
+
+	    <ion-list *ngSwitchCase="'todos'">
+
+				<div *ngIf='leiloes.length < 4' style="width:100%;margin:0px;padding:0px;">
+						<div class="leilao" *ngFor='let fake of fakeLeiloes' class='fakeItem' style="width:100%;margin:0px;padding:0px;animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+
+								<ion-grid>
+									<ion-row>
+
+										<ion-col col-4>
+											<div class="caixa"></div>
+										</ion-col>
+
+										<ion-col col-8>
+												<div style="padding:5px;">
+														<div style="height:25px;width:100%;background-color:#1b2027;margin-bottom:5px;"></div>
+														<div style="height:15px;width:40%;background-color:#1b2027;margin-bottom:4px;"></div>
+														<div style="height:15px;width:40%;background-color:#1b2027;margin-bottom:4px;"></div>
+														<div style="height:15px;width:60%;background-color:#1b2027;margin-bottom:4px;"></div>
+												</div>
+										</ion-col>
+
+									</ion-row>
+								</ion-grid>
+
+						</div>
+				</div>
+
+	      <div class="leilao" *ngFor="let item of leiloes" (click)="verLeilao(item)" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+
+			  <ion-grid>
+
+			  	<ion-row>
+			  		<ion-col col-4>
+			  			<div *ngIf="item.picture; else gavel">
+			  				<img src="http://www.sba1.com/thumbs/leiloes/{{item.picture.split('leiloes/')[1]}}">
+			  			</div>
+			  			<ng-template #gavel>
+			  				<img src="././assets/imgs/leilaovazio.jpg">
+			  			</ng-template>
+			  		</ion-col>
+			  		<ion-col col-8>
+			  			<h3>{{item.canai.name}}</h3>
+			  			<h2>{{item.name}}</h2>
+			  			<h3><div *ngFor="let item of item.leiloeiras">{{item.name}}</div></h3>
+			  			<p><ion-icon name="md-calendar"></ion-icon>&nbsp; {{item.date | date:'dd/MM'}} | {{item.date | date: 'H:mm':'-0300'}}</p>
+			  		</ion-col>
+			  	</ion-row>
+
+			  </ion-grid>
+
+	      </div>
+
+	    </ion-list>
+
+	    <ion-list *ngSwitchCase="'canaldoboi'">
+
+	      <div *ngFor="let item of leiloes"> 
+
+		      <div class="leilao" *ngIf="item.canai.name == 'Canal do Boi'" (click)="verLeilao(item)" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+
+				  <ion-grid>
+
+				  	<ion-row>
+				  		<ion-col col-4>
+				  			<div *ngIf="item.picture; else gavel">
+				  				<img width="100%" style="min-height:110px;" src="http://www.sba1.com/thumbs/leiloes/{{item.picture.split('leiloes/')[1]}}">
+				  			</div>
+				  			<ng-template #gavel>
+				  				<img width="100%" src="././assets/imgs/leilaovazio.jpg">
+				  			</ng-template>
+				  		</ion-col>
+				  		<ion-col col-8>
+				  			<h3>{{item.canai.name}}</h3>
+				  			<h2>{{item.name}}</h2>
+				  			<h3><div *ngFor="let item of item.leiloeiras">{{item.name}}</div></h3>
+				  			<p><ion-icon name="md-calendar"></ion-icon>&nbsp; {{item.date | date:'dd/MM'}} | {{item.date | date: 'H:mm':'-0300'}}</p>
+				  		</ion-col>
+				  	</ion-row>
+
+				  </ion-grid>
+
+		      </div>
+
+	      </div>
+
+	    </ion-list>
+
+	    <ion-list *ngSwitchCase="'agrocanal'">
+
+	      <div *ngFor="let item of leiloes"> 
+
+		      <div class="leilao" *ngIf="item.canai.name == 'Agro Canal'" (click)="verLeilao(item)" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">
+
+				  <ion-grid>
+
+				  	<ion-row>
+				  		<ion-col col-4>
+				  			<div *ngIf="item.picture; else gavel">
+				  				<img width="100%" style="min-height:110px;" src="http://www.sba1.com/thumbs/leiloes/{{item.picture.split('leiloes/')[1]}}">
+				  			</div>
+				  			<ng-template #gavel>
+				  				<img width="100%" src="././assets/imgs/leilaovazio.jpg">
+				  			</ng-template>
+				  		</ion-col>
+				  		<ion-col col-8>
+				  			<h3>{{item.canai.name}}</h3>
+				  			<h2>{{item.name}}</h2>
+				  			<h3><div *ngFor="let item of item.leiloeiras">{{item.name}}</div></h3>
+				  			<p><ion-icon name="md-calendar"></ion-icon>&nbsp; {{item.date | date:'dd/MM'}} | {{item.date | date: 'H:mm':'-0300'}}</p>
+				  		</ion-col>
+				  	</ion-row>
+
+				  </ion-grid>
+
+		      </div>
+
+	      </div>
+
+	    </ion-list>
+
+	</div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)" loadingSpinner="bubbles" loadingText="Loading Users...">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

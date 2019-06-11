@@ -1,0 +1,7 @@
+{
+  "name": "sba",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,37 @@
+<ion-content fullscreen class="noticias" has-bouncing="true">
+
+    <h1 style="animation: 800ms ease-out 0s 1 slideInFromBottom;">Últimas Notícias</h1>
+
+    <div *ngIf='noticias.length < 4'>
+        <div *ngFor='let fake of fakeNoticias' class='fakeNoticias'>
+          <div padding class="caixa">
+          </div>
+            <div class="texto-descricao"></div>
+            <div class="texto"></div>
+        </div>
+    </div>
+
+    <div *ngIf='noticias.length > 4' [@listStagger]="noticias">
+  
+        <div *ngFor="let item of noticias" (click)="verNoticia(item)" tappable>
+      
+          <div class="noticia" style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">
+              <img src="http://sba1.com/thumbs/noticias/{{item.thumbnail.split('noticias/')[1]}}">
+              <h2>
+                <span style="margin-right:9px;" *ngFor="let item of item.categories">
+                    {{item.name}} 
+                </span>
+              </h2>
+              <h1>{{item.name}}</h1>
+              <h3>{{item.date | date:'dd/MM/y'}} | às {{item.date | date: 'H':'-0300'}}h{{item.date | date: 'mm'}}</h3>
+          </div>
+      
+        </div>
+      
+    </div>
+
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)" loadingSpinner="bubbles" loadingText="Loading Users...">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+     </ion-infinite-scroll>
+
+</ion-content>

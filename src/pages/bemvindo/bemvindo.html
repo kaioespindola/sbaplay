@@ -1,0 +1,53 @@
+<ion-content class="splash-bg">
+
+    <div class="splash-logo"></div>
+
+    <div padding>
+
+        <button style="animation: 1000ms ease-out 0s 1 slideInFromBottom;" ion-button block color="light" (click)="signup()">
+            Cadastre-se de graça
+        </button>
+        <button style="animation: 1200ms ease-out 0s 1 slideInFromBottom;" ion-button block (click)="login()" class="login">
+            Já tenho uma conta
+        </button>
+    
+    </div>
+
+    <div padding>
+
+        <div style="height:1px;background-color:#fff;margin-top:1px;margin-bottom:23px;animation: 1400ms ease-out 0s 1 slideInFromBottom;"></div>
+       
+        <div style="font-size:8px;font-weight:400;margin-bottom:15px;text-align:center;animation: 1400ms ease-out 0s 1 slideInFromBottom;">OU LOGAR USANDO</div>
+
+        <ion-grid style="padding:0px;">
+
+            <ion-row style="padding:0px;">
+
+                <ion-col style="padding:7px;animation: 1600ms ease-out 0s 1 slideInFromBottom;">
+
+                    <button full ion-button icon-left (click)="facebooklogin()">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                        Facebook
+                    </button>
+
+                </ion-col>
+
+            </ion-row>
+
+            <ion-row style="padding:0px;">
+
+                <ion-col style="padding:7px;animation: 1800ms ease-out 0s 1 slideInFromBottom;">
+        
+                  <button full ion-button color="barra" round icon-left (click)="pular()" >
+                    Criar mais tarde
+                  </button>
+        
+                </ion-col>
+        
+            </ion-row>
+        
+        </ion-grid>
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,344 @@
+<ion-content fullscreen class="programacao">
+
+    <h1 style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">Programação</h1>
+
+    <ion-toolbar no-border-top transparent style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+        <ion-segment [(ngModel)]="canaldoboi">
+          <ion-segment-button value="canaldoboi">
+            Canal do Boi
+          </ion-segment-button>
+          <ion-segment-button value="agrocanal">
+            Agro Canal
+          </ion-segment-button>
+          <ion-segment-button value="cinemais">
+                Cine Mais
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+
+    <div [ngSwitch]="canaldoboi">
+
+        <ion-list padding *ngSwitchCase="'canaldoboi'" style="animation: 800ms ease-out 0s 1 slideInFromBottom;">
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Segunda a Sexta</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 1">
+
+                        <div *ngIf="item.dia == 'semana'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Sábado</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 1">
+
+                        <div *ngIf="item.dia == 'sabado'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Domingo</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 1">
+
+                        <div *ngIf="item.dia == 'domingo'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
+        </ion-list>
+
+        <ion-list padding *ngSwitchCase="'agrocanal'" style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">
+            
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Segunda a Sexta</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 2">
+
+                        <div *ngIf="item.dia == 'semana'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Sábado</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 2">
+
+                        <div *ngIf="item.dia == 'sabado'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Domingo</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngFor="let item of grades">
+
+                <div *ngIf="item.canal_id == 2">
+
+                    <div *ngIf="item.dia == 'domingo'">
+
+                        <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                            <div class="horario">
+                                <div class="hora">
+                                    {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                </div>
+                                <div class="programa">{{item.name}}</div>
+                            </div>
+                        </ion-item>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </ion-list>
+
+        <!-- Cine Mais -->
+
+        <ion-list padding *ngSwitchCase="'cinemais'" style="animation: 1000ms ease-out 0s 1 slideInFromBottom;">
+            
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Segunda a Sexta</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 5">
+
+                        <div *ngIf="item.dia == 'semana'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Sábado</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='grades.length > 1' style="width:100%;margin:0px;padding:0px;">
+
+                <div *ngFor="let item of grades">
+
+                    <div *ngIf="item.canal_id == 2">
+
+                        <div *ngIf="item.dia == 'sabado'">
+
+                            <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                                <div class="horario">
+                                    <div class="hora">
+                                        {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                    </div>
+                                    <div class="programa">{{item.name}}</div>
+                                </div>
+                            </ion-item>
+
+                        </div>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
+            <h2 style="animation: 1400ms ease-out 0s 1 slideInFromBottom;">Domingo</h2>
+
+            <div *ngIf='grades.length < 1' style="width:100%;margin:0px;padding:0px;">
+                <div *ngFor='let fakeItem of fakeGrades'>
+                    <div class='fakeItem' style="width:100%;margin:0px;padding:0px;">
+                        <div class="caixa-aovivo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngFor="let item of grades">
+
+                <div *ngIf="item.canal_id == 2">
+
+                    <div *ngIf="item.dia == 'domingo'">
+
+                        <ion-item style="animation: 1200ms ease-out 0s 1 slideInFromBottom;">
+                            <div class="horario">
+                                <div class="hora">
+                                    {{item.time | date: 'H':'-0200'}}h{{item.time | date: 'mm'}}
+                                </div>
+                                <div class="programa">{{item.name}}</div>
+                            </div>
+                        </ion-item>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </ion-list>
+    
+    </div>
+
+</ion-content>

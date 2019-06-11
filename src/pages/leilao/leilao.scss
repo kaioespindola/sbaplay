@@ -1,0 +1,73 @@
+page-leilao {
+
+    .content-bg {
+    
+        background: rgb(39,47,61);
+        background: -moz-linear-gradient(top,  rgb(39,47,61) 0%, rgb(22,27,33) 100%);
+        background: -webkit-linear-gradient(top,  rgb(39,47,61) 0%,rgb(22,27,33) 100%);
+        background: linear-gradient(to bottom,  rgb(39,47,61) 0%,rgb(22,27,33) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272f3d', endColorstr='#161b21',GradientType=0 );
+  
+    }
+    
+	h1 {
+	    font-size: 3rem;
+	    font-weight: 900;
+	    padding-left:20px;
+	    padding-right:20px;
+	    padding-top:10px;
+	    padding-bottom:10px;
+	    margin:0px;
+	    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	    text-rendering: optimizeLegibility !important;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    letter-spacing: 1.2;
+    }
+
+    h2 {
+        font-size:2.5rem;
+        font-weight: 900;
+        padding-left:20px;
+        padding-top:15px;
+        margin-bottom:3px;
+        margin-top:0px;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 1.2;
+    }
+
+    h3 {
+      font-size:1.6rem;
+      font-weight: 400;
+      padding-left:20px;
+      padding-top:3px;
+      margin-top:0px;
+      margin-bottom:5px;
+      text-transform:uppercase;
+    }
+
+	img {
+        opacity:0.9;
+        padding:15px;
+	}
+
+	.vazio {
+		width:98%;
+		height:300px;
+		background-size:150%;
+        opacity:0.8;
+    }
+    
+    .grandescriatorios {
+        padding:0px 15px 0px 15px;
+    }
+
+    .clearfix {
+        clear: both;
+        padding:8px 0px 8px 0px;
+    }
+
+}

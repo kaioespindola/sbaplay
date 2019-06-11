@@ -1,0 +1,134 @@
+page-noticia {
+	figure {
+		margin:0;
+		padding:0;
+	}
+
+	figcaption {
+		color:#b3b3b3;
+		font-size:0.7em;
+		padding-bottom:1em;
+		padding-top:0.6em;
+		letter-spacing: 0.01em;
+	}
+
+	img {
+		width:100%;
+		height: auto;
+	}
+
+	ion-content {
+      background: rgb(39,47,61);
+      background: -moz-linear-gradient(top,  rgb(39,47,61) 0%, rgb(22,27,33) 100%);
+      background: -webkit-linear-gradient(top,  rgb(39,47,61) 0%,rgb(22,27,33) 100%);
+      background: linear-gradient(to bottom,  rgb(39,47,61) 0%,rgb(22,27,33) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272f3d', endColorstr='#161b21',GradientType=0 );
+
+	}
+
+	img {
+		opacity:0.8;
+		-webkit-box-shadow: inset 0px -153px 110px 8px rgba(0,0,0,0.71);
+		-moz-box-shadow: inset 0px -153px 110px 8px rgba(0,0,0,0.71);
+		box-shadow: inset 0px -153px 110px 8px rgba(0,0,0,0.71);
+	}
+
+	  h1 {
+	    font-size: 3rem;
+	    font-weight: 900;
+	    padding-left:20px;
+	    padding-right:20px;
+	    padding-top:10px;
+	    margin:0px;
+	    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	    text-rendering: optimizeLegibility !important;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    letter-spacing: 1.2;
+	  }
+
+	  h5 {
+	  	color:#7c7c7c;
+	  	font-size:1.2rem;
+	  	font-weight: 600;
+	  	text-transform: uppercase;
+	  }
+
+
+	/* apply a natural box layout model to all elements */
+	*, *:before, *:after {
+	  -moz-box-sizing: border-box;
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+
+	.thumbnail {
+	  width:100%;
+	  display: inline-block;
+	  position: relative;
+	  -webkit-box-shadow: inset -2px -200px 100px -63px rgba(0,0,0,0.75);
+	  -moz-box-shadow: inset -2px -200px 100px -63px rgba(0,0,0,0.75);
+	  box-shadow: inset -2px -200px 100px -63px rgba(0,0,0,0.75);
+	  -webkit-transition: box-shadow 0.2s ease-in;
+	  -moz-transition: box-shadow 0.2s ease-in;
+	  transition: box-shadow 0.2s ease-in;
+	  padding:0px;
+	  margin:0px;
+	}
+	.thumbnail img {
+	  height: 240px;
+	  position: relative;
+	  z-index: -1;
+	}
+
+	.column {
+	  position: relative;
+	  text-align: center;
+	  width: 100%;
+	  height:240px;
+	  padding: 0 0px;
+	}
+
+	.bloco-dados {
+	  position: absolute;
+	  bottom: 6%;
+	  width: 100%;
+	}
+
+	.bloco-dados .categoria {
+	  float:left;
+	  text-align: left;
+	  margin-bottom:6px;
+	  margin-left:15px;
+	  margin-right:15px;
+	  font-size:1.35rem;
+	  font-weight:500;
+	  color:#fff;
+	  clear:left;
+	}
+
+	.bloco-dados .data {
+	  float:left;
+	  text-align: left;
+	  margin-top:10px;
+	  margin-bottom:6px;
+	  margin-left:15px;
+	  margin-right:15px;
+	  font-size:1.35rem;
+	  font-weight:500;
+	  color:#fff;
+	  clear:left;
+	}
+
+	.bloco-dados .nome {
+	  float:left;
+	  text-align: left;
+	  margin-left:15px;
+	  margin-right:15px;
+	  font-size:1.99rem;
+	  font-weight:500;
+	  color:#fff;
+	  clear:left;
+	}
+
+}

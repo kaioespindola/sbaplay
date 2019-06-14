@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import "rxjs/add/operator/map";
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 @IonicPage()
 @Component({
@@ -10,7 +11,7 @@ import "rxjs/add/operator/map";
 })
 export class AssistirPage {
 
-  channel:any;
+  private channel: any;
 
   agoracb = [];
   depoiscb = [];
@@ -21,11 +22,18 @@ export class AssistirPage {
   agoracm = [];
   depoiscm = [];
 
+  private playercb: any;
+  private playerac: any;
+  private playercm: any;
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private httpClient: HttpClient) {
+    private httpClient: HttpClient,
+    private sanitizer: DomSanitizer) {
 
     this.channel = navParams.get('channel');
+
+    this.playercb = this.sanitizer.bypassSecurityTrustResourceUrl('http://monitor.sba1.com/canaldoboi.php');
   }
 
   agoracanaldoboi() {
@@ -106,7 +114,7 @@ export class AssistirPage {
       }
 
       
-    }, 1500);
+    }, 1000);
 
   }
 

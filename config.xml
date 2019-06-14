@@ -2,7 +2,7 @@
 <widget id="com.sbaplay" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SBA Play</name>
     <description>Assista aos canais da Rede SBA a onde estiver, acompanhe nossos leilões, notícias e fique por dentro da programação do Canal do Boi e Agro Canal.</description>
-    <author email="webmaster@sba1.com" href="http://sba1.com/">SBA</author>
+    <author email="oemaildokaio@gmail.com" href="https://github.com/kaioespindola">Kaio Espindola</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -94,5 +94,4 @@
     <plugin name="phonegap-plugin-push" spec="2.2.2">
         <variable name="SENDER_ID" value="164610122617" />
     </plugin>
-    <engine name="android" spec="7.1.4" />
 </widget>

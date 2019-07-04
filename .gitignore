@@ -35,3 +35,5 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 sign/SBAPlay.apk
 sign/app-release-unsigned.apk
+resources/android
+resources/ios

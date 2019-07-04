@@ -21,7 +21,7 @@ export class LeiloesPage {
   }
 
   loadLeiloes(infiniteScroll?) {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/leiloes?page=${this.page}&sort=Leiloes.date&direction=ASC`)
+    this.httpClient.get(`https://api.sba1.com/leiloes?page=${this.page}&sort=Leiloes.date&direction=ASC`)
     .subscribe(data => {
       this.leiloes = this.leiloes.concat(data).map(res => res);
       if (infiniteScroll) {

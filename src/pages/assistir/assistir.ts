@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
-import "rxjs/add/operator/map";
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ProgramacaoProvider } from '../../providers/programacao/programacao';
+import { Canais } from '../../models/canais/canais.interface';
+import { Programacao } from '../../models/programacao/programacao.interface';
+declare var jwplayer: any;
 
 @IonicPage()
 @Component({
@@ -11,111 +13,43 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 })
 export class AssistirPage {
 
-  private channel: any;
-
-  agoracb = [];
-  depoiscb = [];
-
-  agoraac = [];
-  depoisac = [];
-
-  agoracm = [];
-  depoiscm = [];
-
-  private playercb: any;
-  private playerac: any;
-  private playercm: any;
+  private channel: Canais;
+  public agora: Programacao;
+  public depois: Programacao;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private httpClient: HttpClient,
-    private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer,
+    private programacaoProvider: ProgramacaoProvider) {
 
     this.channel = navParams.get('channel');
-
-    this.playercb = this.sanitizer.bypassSecurityTrustResourceUrl('http://monitor.sba1.com/canaldoboi.php');
   }
 
-  agoracanaldoboi() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/canais/agora/canaldoboi`)
-    .subscribe(datacb => {
-      this.agoracb = this.agoracb.concat(datacb).map(res => res);
-      console.log(this.agoracb);
-    })
+  programacao() {
+    this.programacaoProvider.programacaoAgora(this.channel.slug)
+      .then((agora: Array<Programacao>) => {
+        this.agora = agora[0];
+      });
+    this.programacaoProvider.programacaoDepois(this.channel.slug)
+      .then((depois: Array<Programacao>) => {
+        this.depois = depois[0];
+      });
   }
 
-  depoiscanaldoboi() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/canais/depois/canaldoboi`)
-    .subscribe(datacb => {
-      this.depoiscb = this.depoiscb.concat(datacb).map(res => res);
-      console.log(this.depoiscb);
-    })
-  }
-
-  agoraagrocanal() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/canais/agora/agrocanal`)
-    .subscribe(dataac => {
-      this.agoraac = this.agoraac.concat(dataac).map(res => res);
-      console.log(this.agoraac);
-    })
-  }
-
-  depoisagrocanal() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/canais/depois/agrocanal`)
-    .subscribe(dataac => {
-      this.depoisac = this.depoisac.concat(dataac).map(res => res);
-      console.log(this.depoisac);
-    })
-  }
-
-  agoracinemais() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/canais/agora/cinemais`)
-    .subscribe(datacm => {
-      this.agoracm = this.agoracm.concat(datacm).map(res => res);
-      console.log(this.agoracm);
-    })
-  }
-
-  depoiscinemais() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/canais/depois/cinemais`)
-    .subscribe(datacm => {
-      this.depoiscm = this.depoiscm.concat(datacm).map(res => res);
-      console.log(this.depoiscm);
-    })
-  }
-
-  verGrade() {
-    this.navCtrl.push("ProgramacaoPage");
+  iniciarPlayer() {
+    jwplayer('player').setup({
+      file: `${this.channel.m3u8}`,
+      aspectratio:"4:3",
+      autostart: true,
+      image:`https://sba1.com/webroot/img/canais/${this.channel.picture}`,
+      mediaid:"Dk85fAbY"
+      }
+    );
   }
 
   ionViewDidLoad() {
-
-    setTimeout(() => {
-
-      if(this.channel.name === 'Canal do Boi') {
-
-        this.agoracanaldoboi();
-        this.depoiscanaldoboi();
-
-      }
-
-      if(this.channel.name === 'Agro Canal') {
-
-        this.agoraagrocanal();
-        this.depoisagrocanal();
-
-      }
-
-      if(this.channel.name === 'Cine+') {
-
-        this.agoracinemais();
-        this.depoiscinemais();
-
-      }
-
-      
-    }, 1000);
-
+    this.iniciarPlayer();
+    this.programacao();
   }
 
 }

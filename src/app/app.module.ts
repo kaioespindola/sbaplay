@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { Constants } from './app.constants';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from "@angular/http";
 import { BrMaskerModule } from 'brmasker-ionic-3';
@@ -15,17 +16,12 @@ import { Push } from '@ionic-native/push';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-const firebaseAuth = {
-
-  apiKey: "AIzaSyAD9vz03cO7LmKErvX5fDExkQXIFpHipyM",
-  authDomain: "sba-play.firebaseapp.com",
-  databaseURL: "https://sba-play.firebaseio.com",
-  projectId: "sba-play",
-  storageBucket: "sba-play.appspot.com",
-  messagingSenderId: "164610122617"
-
-};
+import { StorageProvider } from '../providers/storage/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { ChannelsProvider } from '../providers/channels/channels';
+import { NoticiasProvider } from '../providers/noticias/noticias';
+import { LeiloesProvider } from '../providers/leiloes/leiloes';
+import { ProgramacaoProvider } from '../providers/programacao/programacao';
 
 @NgModule({
   declarations: [
@@ -36,7 +32,7 @@ const firebaseAuth = {
     IonicModule.forRoot(MyApp, {
       backButtonText: ''
     }),
-    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireModule.initializeApp(Constants.FIREBASE_AUTH),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpModule,
@@ -53,7 +49,13 @@ const firebaseAuth = {
     SplashScreen,
     Facebook,
     Push,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NativeStorage,
+    StorageProvider,
+    ChannelsProvider,
+    NoticiasProvider,
+    LeiloesProvider,
+    ProgramacaoProvider,
   ]
 })
 export class AppModule {}

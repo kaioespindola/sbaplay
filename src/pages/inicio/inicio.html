@@ -5,62 +5,13 @@
         <h5 style="animation: 900ms ease-in-out 0s 1 slideInFromBottom;">AO VIVO</h5>
     </div>
 
-    <ion-slides pager style="height:280px;">
+    <ion-slides pager spaceBetween="10" slidesPerView="2" style="height:280px;">
 
-      <ion-slide>
+      <ion-slide *ngFor="let channel of channels">
 
-        <ion-grid>
-
-            <ion-row>
-
-              <ion-col>
-                <div *ngFor="let channel of channels">
-                  <div *ngIf="channel.player == 'livecb'">
-                    <div class="home-slide" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;" (click)="assistirCanal(channel)">
-                      <img style="animation: 1400ms ease-in-out 0s 1 slideInFromBottom;" src="././assets/imgs/cbslide.png">
-                    </div>
-                  </div>
-                </div>
-              </ion-col>
-
-              <ion-col>
-                <div *ngFor="let channel of channels">
-                  <div *ngIf="channel.player == 'liveac'">
-                    <div class="home-slide" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;" (click)="assistirCanal(channel)">
-                      <img style="animation: 1400ms ease-in-out 0s 1 slideInFromBottom;" src="././assets/imgs/acslide.png">
-                    </div>
-                  </div>
-                </div>
-              </ion-col>
-
-            </ion-row>
-        </ion-grid>
-
-      </ion-slide>
-
-      <ion-slide>
-
-        <ion-grid>
-
-          <ion-row>
-
-            <ion-col>
-              <div *ngFor="let channel of channels">
-                <div *ngIf="channel.player == 'livecm'">
-                  <div class="home-slide" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;" (click)="assistirCanal(channel)">
-                    <img style="animation: 1400ms ease-in-out 0s 1 slideInFromBottom;" src="././assets/imgs/cmslide.png">
-                  </div>
-                </div>
-              </div>
-            </ion-col>
-
-            <ion-col>
-              
-            </ion-col>
-
-          </ion-row>
-
-        </ion-grid>
+        <div class="home-slide" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;" (click)="assistirCanal(channel)">
+            <img style="margin-top: 50px; animation: 1400ms ease-in-out 0s 1 slideInFromBottom;" src="https://sba1.com/{{channel.transparente}}">
+        </div>
 
       </ion-slide>
 

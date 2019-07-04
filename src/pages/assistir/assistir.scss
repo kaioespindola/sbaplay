@@ -1,5 +1,18 @@
 page-assistir {
 
+    .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        height: 300px;
+        ion-spinner * {
+            width: 5rem;
+            height: 5rem;
+            stroke: rgb(255, 255, 255);
+          }
+    }
+
     .video-container {
         position:relative;
         padding-bottom:67.00%;
@@ -18,22 +31,13 @@ page-assistir {
 
     /* Estrutura */
 
-    ion-navbar {
-        margin-top:10px;
-        margin-left:10px;
-    }
-
-    ion-content {
-        margin-top:-10.7%;
-        height:106%;
-    }
-
 	.assistir {
         background: rgb(39,47,61);
         background: -moz-linear-gradient(top,  rgb(39,47,61) 0%, rgb(22,27,33) 100%);
         background: -webkit-linear-gradient(top,  rgb(39,47,61) 0%,rgb(22,27,33) 100%);
         background: linear-gradient(to bottom,  rgb(39,47,61) 0%,rgb(22,27,33) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272f3d', endColorstr='#161b21',GradientType=0 );
+        margin-top: -16%;
    }
 
    h1 {
@@ -49,6 +53,7 @@ page-assistir {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         letter-spacing: 1.2;
+        animation: 800ms ease-in-out 0s 1 slideInFromBottom;
     }
 
     h2 {
@@ -62,6 +67,7 @@ page-assistir {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         letter-spacing: 1.2;
+        animation: 800ms ease-in-out 0s 1 slideInFromBottom;
     }
 
     h5 {
@@ -79,7 +85,8 @@ page-assistir {
 		background: linear-gradient(135deg,  #256ab8 0%,#408acb 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#256ab8', endColorstr='#408acb',GradientType=1 );
 		padding:8px;
-		margin:6px;
+        margin:6px;
+        animation: 1000ms ease-in-out 0s 1 slideInFromBottom;
 	}
 
 	.agora .programa {
@@ -115,7 +122,8 @@ page-assistir {
 		background: linear-gradient(135deg,  #1b232e 0%,#1f2932 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b232e', endColorstr='#1f2932',GradientType=1 );
 		padding:8px;
-		margin:6px;
+        margin:6px;
+        animation: 1000ms ease-in-out 0s 1 slideInFromBottom;
 	}
 
 	.depois .programa {

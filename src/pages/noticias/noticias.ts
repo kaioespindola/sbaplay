@@ -44,7 +44,7 @@ export class NoticiasPage {
   }
 
   loadNoticias(infiniteScroll?) {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/noticias?page=${this.page}&sort=Noticias.date&direction=DESC`)
+    this.httpClient.get(`https://api.sba1.com/noticias?page=${this.page}&sort=Noticias.date&direction=DESC`)
     .subscribe(data => {
       this.noticias = this.noticias.concat(data).map(res => res);
       if (infiniteScroll) {

@@ -22,7 +22,7 @@ export class ProgramacaoPage {
   }
 
   getGrade() {
-    this.httpClient.get(`https://cors-anywhere.herokuapp.com/http://api.sba1.com/programacao/grade`)
+    this.httpClient.get(`https://api.sba1.com/programacao/grade`)
     .subscribe(datagrade => {
       this.grades = this.grades.concat(datagrade).map(res => res);
     })

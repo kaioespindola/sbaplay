@@ -55,7 +55,7 @@ import { ProgramacaoProvider } from '../providers/programacao/programacao';
     ChannelsProvider,
     NoticiasProvider,
     LeiloesProvider,
-    ProgramacaoProvider,
+    ProgramacaoProvider
   ]
 })
 export class AppModule {}

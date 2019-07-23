@@ -36,19 +36,7 @@ export class AssistirPage {
       });
   }
 
-  iniciarPlayer() {
-    jwplayer('player').setup({
-      file: `${this.channel.m3u8}`,
-      aspectratio:"4:3",
-      autostart: true,
-      image:`https://sba1.com/webroot/img/canais/${this.channel.picture}`,
-      mediaid:"Dk85fAbY"
-      }
-    );
-  }
-
   ionViewDidLoad() {
-    this.iniciarPlayer();
     this.programacao();
   }
 

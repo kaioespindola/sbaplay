@@ -1,15 +1,11 @@
-<ion-header>
+<ion-header no-border>
     <ion-navbar transparent>
     </ion-navbar>
 </ion-header>
 
 <ion-content fullscreen class="assistir" has-bouncing="true">
 
-    <div id="player">
-      <div class="loading">
-        <ion-spinner></ion-spinner>
-      </div>
-    </div>
+    <player [url]="this.channel.m3u8" [img]="this.channel.transparent"></player>
 
     <h1>{{channel.name}}</h1>
     <h5>AO VIVO</h5>

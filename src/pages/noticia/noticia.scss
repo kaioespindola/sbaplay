@@ -1,4 +1,22 @@
 page-noticia {
+
+	ion-content {
+		p {
+			span {
+				background-color: transparent !important;
+				color: white;
+				span {
+					color: white !important;
+				}
+			}
+		}
+	}
+
+	span {
+		background-color: transparent;
+		color: white;
+	}
+
 	figure {
 		margin:0;
 		padding:0;

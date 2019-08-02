@@ -1,24 +1,24 @@
 <ion-content fullscreen class="home-bg" padding has-bouncing="true">
 
   	<div class="header">
-        <h1 style="animation: 800ms ease-in-out 0s 1 slideInFromBottom;">Canais SBA</h1>
-        <h5 style="animation: 900ms ease-in-out 0s 1 slideInFromBottom;">AO VIVO</h5>
+        <h1 @fadeIn>Canais SBA</h1>
+        <h5 @fadeIn>AO VIVO</h5>
     </div>
 
     <ion-slides pager spaceBetween="10" slidesPerView="2" style="height:280px;">
 
       <ion-slide *ngFor="let channel of channels">
 
-        <div class="home-slide" style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;" (click)="assistirCanal(channel)">
-            <img style="margin-top: 50px; animation: 1400ms ease-in-out 0s 1 slideInFromBottom;" src="https://sba1.com/{{channel.transparente}}">
+        <div class="home-slide"(click)="assistirCanal(channel)">
+            <img style="margin-top: 50px" src="https://sba1.com/{{channel.transparente}}">
         </div>
 
       </ion-slide>
 
     </ion-slides>
 
-		<h1 style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">Notícias</h1>
-    <h5 style="animation: 1200ms ease-in-out 0s 1 slideInFromBottom;">MAIS RECENTES</h5>
+		<h1>Notícias</h1>
+    <h5>MAIS RECENTES</h5>
     
 		<div *ngIf='noticias.length < 2'>
 		    <div *ngFor='let fake of fakeNoticias' class='fakeNoticias'>
@@ -28,9 +28,9 @@
 		    </div>
     </div>
     
-		<div *ngIf='noticias.length > 2' [@listStagger]="noticias">
+		<div *ngIf='noticias.length > 2' [@loadList]="noticias">
       <div *ngFor="let item of noticias" (click)="verNoticia(item)" tappable>
-        <div class="noticia" style="animation: 800ms ease-in-out 0s 1 slideInFromBottom;">
+        <div class="noticia">
             <img src="https://sba1.com/thumbs/noticias/{{item.thumbnail.split('noticias/')[1]}}">
             <h2>
               <span *ngFor="let item of item.categories">
@@ -45,11 +45,11 @@
 
     <hr>
 
-		<h1 style="animation: 1000ms ease-in-out 0s 1 slideInFromBottom;">Leilões</h1>
-    <h5 style="animation: 1200ms ease-in-out 0s 1 slideInFromBottom;">PRÓXIMOS</h5>
+		<h1>Leilões</h1>
+    <h5>PRÓXIMOS</h5>
     
-    <div *ngIf='leiloes.length < 3' style="width:100%;margin:0px;padding:0px;">
-				<div class="leilao" *ngFor='let fake of fakeLeiloes' class='fakeLeilao' style="width:100%;margin:0px;padding:0px;">
+    <div *ngIf='leiloes.length < 3'>
+				<div class="leilao" *ngFor='let fake of fakeLeiloes' class='fakeLeilao'>
 					<ion-grid>
 						<ion-row>
 							<ion-col col-4>
@@ -68,7 +68,7 @@
 				</div>
     </div>
 
-    <div class="leilao" *ngFor="let item of leiloes" (click)="verLeilao(item)" [@listStagger]="leiloes" style="animation: 800ms ease-in-out 0s 1 slideInFromBottom;">
+    <div class="leilao" *ngFor="let item of leiloes" (click)="verLeilao(item)" [@loadList]="leiloes">
         <ion-grid>
           <ion-row>
             <ion-col col-4>

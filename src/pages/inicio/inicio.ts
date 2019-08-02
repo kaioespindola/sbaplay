@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { trigger,style,transition,animate,query,stagger} from '@angular/animations';
 import "rxjs/add/operator/map";
 
+import { Animations } from '../../app/app.animations';
 import { Canais } from '../../models/canais/canais.interface';
 import { Noticias } from '../../models/noticias/noticias.interface';
 import { Leiloes } from '../../models/leiloes/leiloes.interface';
@@ -15,19 +15,8 @@ import { LeiloesProvider } from '../../providers/leiloes/leiloes';
   selector: 'page-inicio',
   templateUrl: 'inicio.html',
   animations: [
-    trigger('listStagger', [
-      transition('* <=> *', [
-        query(':enter', [
-          style({ opacity: 0, transform: 'translateY(-15px)' }),
-          stagger('50ms',
-          animate('550ms ease-out',
-          style({ opacity: 1, transform: 'translateY(0px)'})))
-        ], { optional: true }),
-        query(':leave', animate('50ms', style({ opacity: 0 })), {
-          optional: true
-        })
-      ])
-    ])
+    Animations.loadList(),
+    Animations.fadeIn(550)
   ]
 })
 
@@ -53,7 +42,7 @@ export class InicioPage {
 
   loadChannels() {
     this.channelsProvider.listChannels().then(canais => this.channels = canais.filter(canal => {
-      return canal.id !== 3;
+      return canal.id !== 3 && canal.id !==5;
     }));
   }
 
@@ -88,6 +77,5 @@ export class InicioPage {
     this.loadNoticias('0', '3');
     this.loadLeiloes('0', '3');
   }
-
 
 }

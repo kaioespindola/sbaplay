@@ -12,7 +12,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Facebook } from '@ionic-native/facebook';
-import { Push } from '@ionic-native/push';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -48,7 +47,6 @@ import { ProgramacaoProvider } from '../providers/programacao/programacao';
     StatusBar,
     SplashScreen,
     Facebook,
-    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NativeStorage,
     StorageProvider,

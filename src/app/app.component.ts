@@ -24,7 +24,7 @@ export class MyApp {
       splashScreen.hide();
 
       this.storage.checkFirstLogin()
-        .then(first => {
+        .then((first: boolean) => {
           first ? this.rootPage = "TutorialPage" : this.rootPage = "BemvindoPage";
         });
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,11 +8,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TutorialPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController) {
   }
 
   iniciar() {
-    this.navCtrl.setRoot("BemvindoPage", {}, {
+    this.navCtrl.setRoot("BemvindoPage", null, {
       animate: true,
       direction: 'forward'
     });

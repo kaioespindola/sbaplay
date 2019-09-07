@@ -1,0 +1,17 @@
+<ion-slide [ngStyle]="{'background-image': 'url(' + bgImg + ')'}">
+  
+  <h2>{{ title }}</h2>
+  <p>{{ subTitle }}</p>
+
+  <button
+    *ngIf="button"
+    color="light"
+    ion-button
+    icon-end
+    large
+    clear
+    (click)="buttonClick()">
+      CONTINUAR <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+
+</ion-slide>

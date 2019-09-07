@@ -10,7 +10,7 @@ import { StorageProvider } from '../providers/storage/storage';
 })
 export class MyApp {
 
-  rootPage: string = "TutorialPage";
+  rootPage: string;
 
   constructor(platform: Platform,
     statusBar: StatusBar,
@@ -25,7 +25,7 @@ export class MyApp {
 
       this.storage.checkFirstLogin()
         .then((first: boolean) => {
-          first ? this.rootPage = "TutorialPage" : this.rootPage = "BemvindoPage";
+          first ? this.rootPage = "TutorialPage" : this.rootPage = "TutorialPage";
         });
 
 	    this.fire.authState.subscribe(user => {

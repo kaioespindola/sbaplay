@@ -25,7 +25,7 @@ export class MyApp {
 
       this.storage.checkFirstLogin()
         .then((first: boolean) => {
-          first ? this.rootPage = "TutorialPage" : this.rootPage = "TutorialPage";
+          first ? this.rootPage = "TutorialPage" : this.rootPage = "BemvindoPage";
         });
 
 	    this.fire.authState.subscribe(user => {

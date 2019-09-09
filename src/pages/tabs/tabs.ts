@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,6 +14,6 @@ export class TabsPage {
   programacaoRoot = 'ProgramacaoPage'
   perfilRoot = 'PerfilPage'
 
-  constructor(public navCtrl: NavController) {}
+  constructor() {}
 
 }

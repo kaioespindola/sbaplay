@@ -1,5 +1,16 @@
-<div id="teste">
-  <div class="loading">
-    <ion-spinner></ion-spinner>
-  </div>
+<div *ngIf="loading else player" class="loading">
+  <ion-spinner></ion-spinner>
 </div>
+
+<ng-template #player>
+  <div class="videoWrapper">
+    <iframe
+      frameborder='0'
+      width='100%'
+      scrolling='no'
+      [src]='playerUrl'
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+</ng-template>

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-declare var jwplayer: any;
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'player',
@@ -8,24 +8,18 @@ declare var jwplayer: any;
 export class PlayerComponent {
 
   @Input() url: string;
-  @Input() img: string;
 
-  constructor() {
-  }
+  loading: boolean = true;
+  playerUrl: SafeResourceUrl;
 
-  initPlayer() {
-    jwplayer('teste').setup({
-      file: `${this.url}`,
-      aspectratio:"4:3",
-      autostart: true,
-      image:`https://sba1.com/webroot/img/canais/${this.img}`,
-      mediaid:"Dk85fAbY"
-      }
-    );
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
-    this.initPlayer();
+    setTimeout(() => {
+      this.loading = false;
+      this.playerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+    },1000)
   }
 
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { StorageProvider } from '../providers/storage/storage';
 
 @Component({
@@ -15,7 +14,6 @@ export class MyApp {
   constructor(platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    private fire: AngularFireAuth,
     private storage: StorageProvider) {
     platform.ready().then(() => {
 
@@ -25,15 +23,9 @@ export class MyApp {
 
       this.storage.checkFirstLogin()
         .then((first: boolean) => {
-          first ? this.rootPage = "TutorialPage" : this.rootPage = "BemvindoPage";
-        });
+          first ? this.rootPage = "TutorialPage" : this.rootPage = "TabsPage";
+        })
 
-	    this.fire.authState.subscribe(user => {
-	      if(user && user.email && user.uid) { 
-	        this.rootPage = "TabsPage";
-	      }
-	    })
-
-    });
+    })
   }
 }

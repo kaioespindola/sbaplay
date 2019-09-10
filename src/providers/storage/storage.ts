@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { NativeStorage } from '@ionic-native/native-storage';
 import { Constants } from '../../app/app.constants';
 
 @Injectable()
 export class StorageProvider {
 
-  constructor(private nativeStorage: NativeStorage) {
+  constructor() {
   }
 
   async checkFirstLogin() {

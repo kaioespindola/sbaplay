@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sbaplay" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.sbaplay" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SBA Play</name>
     <description>Assista aos canais da Rede SBA a onde estiver, acompanhe nossos leilões, notícias e fique por dentro da programação do Canal do Boi e Agro Canal.</description>
     <author email="oemaildokaio@gmail.com" href="https://github.com/kaioespindola">Kaio Espindola</author>
@@ -90,24 +90,12 @@
         <splash height="2436" src="resources/ios/splash/Default-2436h.png" width="1125" />
         <splash height="1125" src="resources/ios/splash/Default-Landscape-2436h.png" width="2436" />
     </platform>
-    <platform name="android">
-        <resource-file src="google-services.json" target="google-services.json" />
-    </platform>
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <plugin name="cordova-plugin-facebook4" spec="3.2.0">
-        <variable name="APP_ID" value="533759830357197" />
-        <variable name="APP_NAME" value="SBAPlay" />
-        <variable name="FACEBOOK_ANDROID_SDK_VERSION" value="4.38.1" />
-    </plugin>
     <plugin name="cordova-plugin-compat" spec="^1.2.0" />
-    <plugin name="phonegap-plugin-push" spec="2.2.2">
-        <variable name="SENDER_ID" value="164610122617" />
-    </plugin>
     <engine name="android" spec="8.0.0" />
-    <engine name="browser" spec="6.0.0" />
     <engine name="ios" spec="5.0.1" />
 </widget>

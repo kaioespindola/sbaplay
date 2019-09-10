@@ -8,11 +8,10 @@ import { IonicPage } from 'ionic-angular';
 })
 export class TabsPage {
 
-  inicioRoot = 'InicioPage'
-  leiloesRoot = 'LeiloesPage'
-  noticiasRoot = 'NoticiasPage'
-  programacaoRoot = 'ProgramacaoPage'
-  perfilRoot = 'PerfilPage'
+  inicioRoot: string = 'InicioPage'
+  leiloesRoot: string = 'LeiloesPage'
+  noticiasRoot: string = 'NoticiasPage'
+  programacaoRoot: string = 'ProgramacaoPage'
 
   constructor() {}
 

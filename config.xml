@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sbaplay" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.sbaplay" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SBA Play</name>
     <description>Assista aos canais da Rede SBA a onde estiver, acompanhe nossos leilões, notícias e fique por dentro da programação do Canal do Boi e Agro Canal.</description>
     <author email="oemaildokaio@gmail.com" href="https://github.com/kaioespindola">Kaio Espindola</author>
@@ -96,6 +96,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-compat" spec="^1.2.0" />
-    <engine name="android" spec="8.0.0" />
-    <engine name="ios" spec="5.0.1" />
+    <engine name="ios" spec="^5.0.1" />
+    <engine name="android" spec="^8.0.0" />
 </widget>

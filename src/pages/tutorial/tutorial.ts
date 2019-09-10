@@ -12,7 +12,7 @@ export class TutorialPage {
   }
 
   iniciar() {
-    this.navCtrl.setRoot("BemvindoPage", null, {
+    this.navCtrl.setRoot("TabsPage", null, {
       animate: true,
       direction: 'forward'
     });

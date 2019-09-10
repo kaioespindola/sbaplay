@@ -22,7 +22,6 @@ export class NoticiaPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NoticiaPage');
   }
 
 }

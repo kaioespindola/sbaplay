@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import "rxjs/add/operator/map";
 
-import { Animations } from '../../app/app.animations';
-import { Canais } from '../../models/canais/canais.interface';
-import { Noticias } from '../../models/noticias/noticias.interface';
-import { Leiloes } from '../../models/leiloes/leiloes.interface';
-import { ChannelsProvider } from '../../providers/channels/channels';
-import { NoticiasProvider } from '../../providers/noticias/noticias';
-import { LeiloesProvider } from '../../providers/leiloes/leiloes';
+import { Animations } from '../../../app/app.animations';
+import { Canais } from '../../../models/canais/canais.interface';
+import { Noticias } from '../../../models/noticias/noticias.interface';
+import { Leiloes } from '../../../models/leiloes/leiloes.interface';
+import { ChannelsProvider } from '../../../providers/channels/channels';
+import { NoticiasProvider } from '../../../providers/noticias/noticias';
+import { LeiloesProvider } from '../../../providers/leiloes/leiloes';
 
 @IonicPage()
 @Component({

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ProgramacaoProvider } from '../../../providers/programacao/programacao';
-import { Canais } from '../../../models/canais/canais.interface';
-import { Programacao } from '../../../models/programacao/programacao.interface';
+import { ProgramacaoProvider } from '../../../../providers/programacao/programacao';
+import { Canais } from '../../../../models/canais/canais.interface';
+import { Programacao } from '../../../../models/programacao/programacao.interface';
 
 @IonicPage()
 @Component({

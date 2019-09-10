@@ -1,3 +1,5 @@
+import { Leiloeira } from '../leiloeira/leiloeira.interface';
+
 export interface Leiloes {
     id: number,
     name: string,
@@ -16,25 +18,5 @@ export interface Leiloes {
     vt2?: string,
     grandescriatorios?: string,
     grandescriatorios2?: string,
-    leiloeiras: [
-        {
-            id: number,
-            name: string,
-            email: string,
-            telefone: string,
-            link: string,
-            cep: string,
-            endereco: string,
-            numero: string,
-            bairro: string,
-            complemento?: string,
-            cidade: string,
-            estado: string
-            picture: string,
-            _joinData: {
-                leiloeira_id: number,
-                leilao_id: number
-            }
-        }
-    ]
+    leiloeiras: Array<Leiloeira>
 }

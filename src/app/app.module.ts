@@ -14,7 +14,6 @@ import { ChannelsProvider } from '../providers/channels/channels';
 import { NoticiasProvider } from '../providers/noticias/noticias';
 import { LeiloesProvider } from '../providers/leiloes/leiloes';
 import { ProgramacaoProvider } from '../providers/programacao/programacao';
-import { AlertProvider } from '../providers/alert/alert';
 
 @NgModule({
   declarations: [
@@ -41,8 +40,7 @@ import { AlertProvider } from '../providers/alert/alert';
     ChannelsProvider,
     NoticiasProvider,
     LeiloesProvider,
-    ProgramacaoProvider,
-    AlertProvider
+    ProgramacaoProvider
   ]
 })
 export class AppModule {}

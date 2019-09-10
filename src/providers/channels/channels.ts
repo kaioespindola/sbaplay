@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 
 import { Constants } from '../../app/app.constants';
 import { Canais } from '../../models/canais/canais.interface';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ChannelsProvider {

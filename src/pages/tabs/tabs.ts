@@ -13,6 +13,4 @@ export class TabsPage {
   noticiasRoot: string = 'NoticiasPage'
   programacaoRoot: string = 'ProgramacaoPage'
 
-  constructor() {}
-
 }

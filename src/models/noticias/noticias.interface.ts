@@ -1,3 +1,5 @@
+import { Category } from '../category/category.interface';
+
 export interface Noticias {
     id: number,
     user_id: number,
@@ -15,21 +17,5 @@ export interface Noticias {
     modified: string,
     jornalista: string,
     local: string,
-    categories?: [
-        {
-            id?: number,
-            parent_id?: number,
-            lft?: number,
-            rght?: number,
-            name?: string,
-            slug?: string,
-            description?: string,
-            created?: string,
-            modified?: string,
-            _joinData?: {
-                noticia_id?: number,
-                category_id?: number
-            }
-        }
-    ]
+    categories?: Array<Category>
 }

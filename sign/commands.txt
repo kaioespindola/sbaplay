@@ -1,4 +1,9 @@
+// BUILD EM PROD ANDROID - MIMIFICADO //
+ionic cordova build android --prod --aot --minifyjs --minifycss --release
+
+// ASSINAR APK COM KEY ANDROID //
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.jks app-release-unsigned.apk my-alias
 
+// FAZER ALIGN DO APK ASSINADO ANDROID //
 zipalign -v 4 app-release-unsigned.apk SBAPlay.apk
 /Users/kaioespindola/Library/Android/sdk/build-tools/29.0.0/zipalign -v 4 app-release-unsigned.apk SBAPlay.apk

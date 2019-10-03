@@ -7,7 +7,7 @@ import { NoticiasPage } from './noticias';
     NoticiasPage,
   ],
   imports: [
-    IonicPageModule.forChild(NoticiasPage),
+    IonicPageModule.forChild(NoticiasPage)
   ],
 })
 export class NoticiasPageModule {}

@@ -1,0 +1,11 @@
+slide-news {
+    ion-slides {
+        max-height: 300px;
+
+        ion-slide {
+            min-width: 200px;
+            color: gold;
+            background-color: white;
+        }
+    }
+}
